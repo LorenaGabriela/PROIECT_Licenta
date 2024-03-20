@@ -24,6 +24,9 @@ nav{
     padding: 2% 6%;
     justify-content: space-between;
     align-items: center;
+
+
+
 }
 nav img{
     width: 60px;
@@ -31,6 +34,8 @@ nav img{
 .nav-links{
     flex:1;
     text-align:right;
+
+
 }
 .nav-links ul li{
     height: 2px;
@@ -40,6 +45,7 @@ nav img{
     padding: 8px 12px;
     position: relative;
     font-size: 1px;
+
 
 }
  a img {
@@ -91,11 +97,22 @@ nav img{
     text-align: center;
 }
 .text-box h1{
-    font-size: 62px;
-    font-family: 'Lucida Handwriting', cursive;
+    font-size: 50px;
+    font-family: 'Lucida Handwriting';
     font-weight: lighter;
     color: #FFA500;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation: typing 3s steps(40, end), blink-caret .5s step-end infinite;
 }
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+
 .text-box p{
     margin: 10px 0 40px;
     font-size: 18px;
@@ -157,7 +174,10 @@ nav img{
 .form-container {
   max-width: 400px;
 }
+.text-box a {
 
+    margin-top: 40px; /* Adaugă spațiu între text și link folosind margin-top */
+}
 
 
 
