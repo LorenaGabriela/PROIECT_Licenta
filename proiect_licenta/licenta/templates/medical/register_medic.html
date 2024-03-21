@@ -143,36 +143,38 @@ button{
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    <form action="" method="POST">
+    <form  method="POST" autocomplete="off">
         {% csrf_token %}
-        {{form}}
-        <h3>Înregistrare</h3>
+                <h3>Înregistrare</h3>
 
-        <label for="username">Nume </label>
-        <input type="text" placeholder="Nume medic" name="nume_medic" id="nume_medic" autocomplete="off">
+        {{registerform}}
 
-        <label for="username">Prenume </label>
-        <input type="text" placeholder="Prenume medic" name="prenume_medic" id="prenume medic" autocomplete="off">
 
-        <label for="username">Nume Utilizator</label>
-        <input type="text" placeholder="Nume Utilizator" name="username" id="username" autocomplete="off">
+<!--        <label for="username">Nume </label>-->
+<!--        <input type="text" placeholder="Nume medic" name="nume_medic" id="nume_medic" autocomplete="off">-->
 
-        <label for="email_medic">Email</label>
-        <input type="email" placeholder="Email" name="email_medic" id="email_medic" autocomplete="off">
+<!--        <label for="username">Prenume </label>-->
+<!--        <input type="text" placeholder="Prenume medic" name="prenume_medic" id="prenume medic" autocomplete="off">-->
 
-        <label for="telefon_medic">Telefon</label>
-        <input type="tel" placeholder="Telefon" name="telefon_medic" id="telefon_medic">
+<!--        <label for="username">Nume Utilizator</label>-->
+<!--        <input type="text" placeholder="Nume Utilizator" name="username" id="username" autocomplete="off">-->
 
-        <label for="password">Parola</label>
-        <input type="password" placeholder="Parola" id="password" name="password" autocomplete="off">
+<!--        <label for="email_medic">Email</label>-->
+<!--        <input type="email" placeholder="Email" name="email_medic" id="email_medic" autocomplete="off">-->
 
-        <label for="confirm_password">Confirma Parola </label>
-        <input type="password" placeholder="Confirma Parola" id="confirm_password" name="confirm_password" autocomplete="off">
+<!--        <label for="telefon_medic">Telefon</label>-->
+<!--        <input type="tel" placeholder="Telefon" name="telefon_medic" id="telefon_medic">-->
+
+<!--        <label for="password">Parola</label>-->
+<!--        <input type="password" placeholder="Parola" id="password" name="password" autocomplete="off">-->
+
+<!--        <label for="confirm_password">Confirma Parola </label>-->
+<!--        <input type="password" placeholder="Confirma Parola" id="confirm_password" name="confirm_password" autocomplete="off">-->
 
         <button type="submit" href="">Înregistreaza-te</button>
+</form>
 
 
-    </form>
 <!--     <div class="form-group">-->
 <!--    {% for message in messages %}-->
 <!--    <div class="alert alert-danger" role="alert">-->

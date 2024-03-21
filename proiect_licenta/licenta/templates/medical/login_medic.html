@@ -129,6 +129,7 @@ button{
 
 
 
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <title>Medical Website Register Pacient</title>
@@ -167,6 +168,15 @@ button{
         <div class="shape"></div>
     </div>
 
+{%if request.user.is_authenticated%}
+<script>
+        window.location.href = "{% url 'pacienti' %}";
+    </script>
+<!--<p class="text-success">You are Logged In</p>-->
+<!--<p class="text-success">Username : {{request.user.username }}</p>-->
+{% else %}
+
+
     <form action="{% url 'login_medic' %}" method="POST">
         {% csrf_token %}
         {{form}}
@@ -181,7 +191,8 @@ button{
 
         <a href="/pacienti">
   <button type="button">Intra in cont!</button>
-</a>
+
+</a>{% endif %}
 
 <!--        <button  type= "submit"></button>  <a href="/upload_photo_pacient">Intra in cont!</button>-->
 
