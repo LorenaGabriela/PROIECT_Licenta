@@ -1,10 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style>
+
+   {% load static %}
+
+</style>
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>HomePage</title>
 </head>
 <body>
+<header>
 
+
+    <nav>
+    <a href="/">
+    <a style="font-family: Monospace, sans-serif; font-size: 40px; ">
+         Medica
+    </a>
+</a>
+        <div class="nav-links">
+
+            <ul>
+
+                <li>
+                    <a href="">Despre aplicatie</a>
+                </li>
+                <li>
+                    <a href="">Contact</a>
+                </li>
+                <li>
+                    <a href="">Noutati</a>
+                </li>
+                <li>
+                    <a href="">Servicii</a>
+                </li>
+                <li>
+                    <a href="">Acasa</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+     <div class="text-box">
+        <h1>
+            Bine ai venit, {{ user.username }}!
+        </h1> </div>
+
+
+
+</header>
 </body>
+
 </html>
