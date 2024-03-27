@@ -5,6 +5,168 @@
 
    {% load static %}
 
+h1{
+  font-size: 30px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 15px;
+}
+table{
+  width:100%;
+  table-layout: fixed;
+}
+.tbl-header{
+  background-color: rgba(255,255,255,0.3);
+  font-size: 10px;
+ }
+.tbl-content{
+  height:300px;
+  overflow-x:auto;
+  margin-top: 0px;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+th{
+  padding: 20px 15px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 12px;
+  color: #fff;
+  text-transform: uppercase;
+}
+td{
+  padding: 10px;
+  text-align: left;
+  vertical-align:middle;
+  font-weight: 300;
+  font-size: 11px;
+  color: #fff;
+  border-bottom: solid 1px rgba(255,255,255,0.1);
+}
+
+td a{
+  padding: 15px;
+  text-align: left;
+  vertical-align:middle;
+  font-weight: 300;
+  font-size: 11px;
+  color: #fff;
+  border-bottom: solid 1px rgba(255,255,255,0.1);
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+body{
+  background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+  background: linear-gradient(to right, #25c481, #25b7c4);
+  font-family: 'Roboto', sans-serif;
+}
+section{
+  margin: 50px;
+}
+
+
+/* follow me template */
+.made-with-love {
+  margin-top: 40px;
+  padding: 10px;
+  clear: left;
+  text-align: center;
+  font-size: 10px;
+  font-family: arial;
+  color: #fff;
+}
+.made-with-love i {
+  font-style: normal;
+  color: #F50057;
+  font-size: 14px;
+  position: relative;
+  top: 2px;
+}
+.made-with-love a {
+  color: #fff;
+  text-decoration: none;
+}
+.made-with-love a:hover {
+  text-decoration: underline;
+}
+
+
+/* for custom scrollbar for webkit browser*/
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+.button-40 {
+  background-color: #111827;
+  border: 1px solid transparent;
+  border-radius: .75rem;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  padding: .75rem 1.2rem;
+  text-align: center;
+  text-decoration: none #6B7280 solid;
+  text-decoration-thickness: auto;
+  transition-duration: .2s;
+  transition-property: background-color,border-color,color,fill,stroke;
+  transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+}
+
+.button-40:hover {
+  background-color: #374151;
+}
+
+.button-40:focus {
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+  .button-40 {
+    padding: .75rem 1.5rem;
+  }
+}
+.text-box h2{
+    font-size: 30px;
+    font-family: 'Lucida Handwriting';
+    font-weight: lighter;
+    color: #FFA500;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 ;
+    letter-spacing: .15em;
+    animation: typing 3s steps(40, end), blink-caret .5s step-end infinite;
+    text-align: left;
+    padding-left: 90px;
+}
+.register-button {
+    text-align: center;
+    margin-top: 500px; /* Ajustați distanța dintre tabel și butonul de înregistrare */
+}
+.telefon-column {
+  text-align: right; /* Ajustați valoarea pentru a alinia conținutul la dreapta */
+}
+
+
 </style>
 
     <link rel="stylesheet" href="{% static 'style.css' %}">
@@ -49,13 +211,73 @@
         </div>
     </nav>
      <div class="text-box">
-        <h1>
-            Bine ai venit, {{ user.username }}!
-        </h1> </div>
+<p></p><p></p>
+        <h2>
+            Bine ai venit, {{ request.user.username }}!
+        </h2>
+
+<section>
+
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>ID Pacient</th>
+          <th>Nume</th>
+          <th>Prenume</th>
+<!--            <th style="padding">Email</th>-->
+          <th >Telefon</th>
+<!--          <th>Data Nastere</th>-->
+            <th>Sex</th>
+            <th>Sterge Pacient</th>
+            <th>Editeaza Pacient</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+
+        {% if pacienti %}
+            {% for pacient in pacienti %}
+         <tr>
+                    <td class="Linethrough">{{pacient.id}}</td>
+                    <td class="Linethrough">{{ pacient.nume_pacient }}</td>
+                    <td class="Linethrough">{{ pacient.prenume_pacient}}</td>
+<!--                    <td class="Linethrough">{{ pacient.email_pacient }}</td>-->
+                   <td class="Linethrough">{{ pacient.telefon_pacient }}</td>
+
+<!--                    <td class="Linethrough">{{ pacient.data_nastere}}</td>-->
+                    <td class="Linethrough">{{ pacient.sex_pacient}}</td>
+                    <td class="Linethrough" style="padding-top: -20px; ">
+                         <a href="{% url 'stergepacienti' pacient.id %}">Delete</a>
+                    </td>
+                     <td class="Linethrough">
+                            <a href="{% url 'editeaza_pacient' pacient.id %}">Detalii Pacient</a>
+                     </td>
+              </tr>
+            {% endfor %}
+        {% endif %}
+
+
+      </tbody>
+    </table>
+  </div>
+</section>
+
+    </div>
+
 
 
 
 </header>
+<div class="register-button">
+        <a href="/adauga_pacienti" class="hero-btn">Adauga pacient</a>
+    </div>
+
+
+
 </body>
 
 </html>

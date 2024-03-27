@@ -168,33 +168,21 @@ button{
         <div class="shape"></div>
     </div>
 
-{%if request.user.is_authenticated%}
-<script>
-        window.location.href = "{% url 'pacienti' %}";
-    </script>
-<!--<p class="text-success">You are Logged In</p>-->
-<!--<p class="text-success">Username : {{request.user.username }}</p>-->
-{% else %}
 
 
-    <form action="{% url 'login_medic' %}" method="POST">
+    <form method="POST" autocomplete="off">
         {% csrf_token %}
-        {{form}}
-        <h3>Inregistrare</h3>
+         <h3>Autentificare</h3>
+        {{loginform.as_p}}
 
-        <label for="username">Username </label>
-        <input type="text" placeholder="Username" name="username" id="username">
-
-        <label for="password">Password</label>
-        <input type="password" placeholder="Password" id="password" name="password">
 
 
         <a href="/pacienti">
   <button type="button">Intra in cont!</button>
 
-</a>{% endif %}
+</a>
 
-<!--        <button  type= "submit"></button>  <a href="/upload_photo_pacient">Intra in cont!</button>-->
+
 
 
     </form>

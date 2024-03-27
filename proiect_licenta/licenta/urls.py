@@ -1,11 +1,15 @@
 from django.urls import path, include
 from . import views
-
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('', views.home, name = 'home'),
     path('register_medic/', views.register_medic, name = 'register_medic'),
     path('pacienti/',views.pacienti,name="pacienti"),
     path('login_medic/', views.login_medic, name="login_medic"),
-    path('login_medic_dupa_delogare/', views.logout_user, name="logout_user")
+    path('logout_medic/', views.logout_user, name="logout_user"),
+    path('adauga_pacienti/', views.adaugapacienti,name = "adauga_pacienti"),
+    path('stergepacienti/<id>', views.stergepacienti, name='stergepacienti'),
+    path('editeaza_pacient/<id>', views.editeaza_pacient, name="editeaza_pacient"),
+    # path('editeaza_pacient/editeaza/<id>',views.editeaza,name='editeaza'),
 ]

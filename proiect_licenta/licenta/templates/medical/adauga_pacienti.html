@@ -38,24 +38,28 @@
                 <li>
                     <a href="">Servicii</a>
                 </li>
+                <li>
+                    <a href="/pacienti">Inapoi</a>
+                </li>
 
             </ul>
         </div>
     </nav>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <p></p>
+        <center>
+            <div>
+            {{form.as_p}}
+        </div>
 
-    <div class="text-box">
-        <h1>
-            Bine ai venit!
-        </h1>
-        <h2>
-                    <a href="/register_medic" class="hero-btn">Inregistrare</a>
+  <div class="col">
 
-        </h2><h2>
-                <a href="/login_medic" class="hero-btn">Autentificare</a>
+        <input class="btn btn-primary" type="submit" value="Submit">
+        </center>
 
-    </h2>
-
-    </div>
+</form>
 
 </header>
 </body>
