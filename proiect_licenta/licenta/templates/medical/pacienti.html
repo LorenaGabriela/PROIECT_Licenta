@@ -231,6 +231,7 @@ section{
             <th>Sex</th>
             <th>Sterge Pacient</th>
             <th>Editeaza Pacient</th>
+            <th>Mamografii Pacient</th>
         </tr>
       </thead>
     </table>
@@ -255,6 +256,9 @@ section{
                     </td>
                      <td class="Linethrough">
                             <a href="{% url 'editeaza_pacient' pacient.id %}">Detalii Pacient</a>
+                     </td>
+             <td class="Linethrough">
+                            <a href="{% url 'upload_mamografie_pacient' pacient.id %}">Mamografii Pacient</a>
                      </td>
               </tr>
             {% endfor %}

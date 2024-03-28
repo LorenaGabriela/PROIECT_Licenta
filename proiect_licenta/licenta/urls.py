@@ -11,5 +11,5 @@ urlpatterns = [
     path('adauga_pacienti/', views.adaugapacienti,name = "adauga_pacienti"),
     path('stergepacienti/<id>', views.stergepacienti, name='stergepacienti'),
     path('editeaza_pacient/<id>', views.editeaza_pacient, name="editeaza_pacient"),
-    # path('editeaza_pacient/editeaza/<id>',views.editeaza,name='editeaza'),
+    path('upload_mamografie_pacient/<id>', views.upload_mamografie_pacient, name="upload_mamografie_pacient")
 ]

@@ -26,3 +26,13 @@ class Pacienti(models.Model):
 
     def __str__(self):
         return self.nume_pacient + ' ' + self.prenume_pacient
+
+
+class Mamografii(models.Model):
+    nume_pacient = models.ForeignKey(Pacienti, on_delete=models.CASCADE)
+    file = models.FileField()
+    description = models.TextField(blank=True)
+    data_incarcare = models.DateField()
+
+    def __str__(self):
+        return f"{self.nume_pacient} - {self.file.name}"
